@@ -51,3 +51,21 @@ Or:
 ```js
 const [primaryGenre, secondaryGenre] = genres;
 ```
+
+##### Reference from: Jon Randy at Dev.to
+
+Destructuring is not only can getting data out of an object or Array
+It would be more correct to say an object or iterable
+Like strings for example:
+
+```js
+let [a, b, ...c] = "Hello";
+console.log(a, b, c); // "H", "e", [ "l", "l", "o" ]
+```
+
+Also destructuring can do more interesting stuff:
+
+```js
+let { length, 2: thirdLetter } = "Surprise";
+console.log(length, thirdLetter); // 8, "r"
+```

@@ -148,7 +148,7 @@ function getBook(id) {
 // const books = getBooks();
 // books;
 
-const book = getBook(2);
+const book = getBook(1);
 // const title = book.title;
 // const author = book.author;
 
@@ -160,6 +160,40 @@ console.log(title, author, genres);
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+// const [primaryGenre, secondaryGenre] = genres;
+// console.log(primaryGenre, secondaryGenre);
 
-console.log(primaryGenre, secondaryGenre);
+// ues rest operator
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+// const newGenres = [genres, "epic fantasy"];
+// newGenres;
+
+// we want the feature one by one
+const newGenres = ["epic fantasy", ...genres];
+newGenres;
+
+// objects
+// const updatedBook = { book, moviePublicationDate: "2001-12-19" };
+// updatedBook;
+
+// inside book have other book property which contain book self and moviePublicationDate property
+// what we want is one object with contain all the properties and the new moviePublicationDate property
+
+// this is how we add new property to object useing spread operator
+// it is samply overwrite them
+// const updatedBook = { ...book, moviePublicationDate: "2001-12-19" };
+// updatedBook;
+
+// the '...' basically take all the elements, into this new object, and contain the original properties
+// then we have two pages properties, the second one will overwrite the first one when'pages:1210' at last
+// otherwize the pages will still be 1216
+const updatedBook = {
+  ...book,
+  // adding a new property
+  moviePublicationDate: "2001-12-19",
+  // overwrite a existing property
+  pages: 1210,
+};
+updatedBook;

@@ -167,16 +167,23 @@ console.log(title, author, genres);
 const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 console.log(primaryGenre, secondaryGenre, otherGenres);
 
+// const [primaryGenre, ...otherGenres, secondaryGenre] = genres;
+// console.log(primaryGenre, secondaryGenre, otherGenres);
+
 // const newGenres = [genres, "epic fantasy"];
 // newGenres;
 
 // we want the feature one by one
-const newGenres = ["epic fantasy", ...genres];
+const newGenres = [...genres, "epic fantasy"];
 newGenres;
 
 // objects
-// const updatedBook = { book, moviePublicationDate: "2001-12-19" };
-// updatedBook;
+const updatedBook = {
+  moviePublicationDate: "2012-12-19",
+  pages: 1220,
+  ...book,
+};
+updatedBook;
 
 // inside book have other book property which contain book self and moviePublicationDate property
 // what we want is one object with contain all the properties and the new moviePublicationDate property
@@ -189,11 +196,11 @@ newGenres;
 // the '...' basically take all the elements, into this new object, and contain the original properties
 // then we have two pages properties, the second one will overwrite the first one when'pages:1210' at last
 // otherwize the pages will still be 1216
-const updatedBook = {
-  ...book,
-  // adding a new property
-  moviePublicationDate: "2001-12-19",
-  // overwrite a existing property
-  pages: 1210,
-};
-updatedBook;
+// const updatedBook = {
+//   ...book,
+//   // adding a new property
+//   moviePublicationDate: "2001-12-19",
+//   // overwrite a existing property
+//   pages: 1210,
+// };
+// updatedBook;

@@ -178,12 +178,12 @@ const newGenres = [...genres, "epic fantasy"];
 newGenres;
 
 // objects
-const updatedBook = {
-  moviePublicationDate: "2012-12-19",
-  pages: 1220,
-  ...book,
-};
-updatedBook;
+// const updatedBook = {
+//   moviePublicationDate: "2012-12-19",
+//   pages: 1220,
+//   ...book,
+// };
+// updatedBook;
 
 // inside book have other book property which contain book self and moviePublicationDate property
 // what we want is one object with contain all the properties and the new moviePublicationDate property
@@ -196,11 +196,20 @@ updatedBook;
 // the '...' basically take all the elements, into this new object, and contain the original properties
 // then we have two pages properties, the second one will overwrite the first one when'pages:1210' at last
 // otherwize the pages will still be 1216
-// const updatedBook = {
-//   ...book,
-//   // adding a new property
-//   moviePublicationDate: "2001-12-19",
-//   // overwrite a existing property
-//   pages: 1210,
-// };
-// updatedBook;
+const updatedBook = {
+  ...book,
+  // adding a new property
+  moviePublicationDate: "2001-12-19",
+  // overwrite a existing property
+  pages: 1210,
+};
+updatedBook;
+
+// create a summary object
+// const summary = `${title} is a book ${2 + 4}`;
+// summary;
+
+const summary = `${title} is a ${pages}-pages long book, was writen by ${author}, and published on ${
+  publicationDate.split("-")[0]
+}`;
+summary;

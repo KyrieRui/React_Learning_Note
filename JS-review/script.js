@@ -148,7 +148,7 @@ function getBook(id) {
 // const books = getBooks();
 // books;
 
-const book = getBook(1);
+const book = getBook(2);
 // const title = book.title;
 // const author = book.author;
 
@@ -211,5 +211,16 @@ updatedBook;
 
 const summary = `${title} is a ${pages}-pages long book, was writen by ${author}, and published on ${
   publicationDate.split("-")[0]
-}`;
+}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 summary;
+
+// some times we not ues if-else, we can use ternary operator
+// first part is condition, second part is if true, third part is if false
+pages > 1000 ? "over 1000" : "less than 1000";
+// it have three parts, first part is condition, second part is if true, third part is if false
+
+// we can also put this ternary operator into a const
+const pagesSummary = pages > 1000 ? "over 1000" : "less than 1000";
+pagesSummary;
+
+console.log(`The book has ${pagesSummary} pages`);

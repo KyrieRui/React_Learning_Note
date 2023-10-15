@@ -209,9 +209,11 @@ updatedBook;
 // const summary = `${title} is a book ${2 + 4}`;
 // summary;
 
-const summary = `${title} is a ${pages}-pages long book, was writen by ${author}, and published on ${
-  publicationDate.split("-")[0]
-}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
+const getYear = (str) => str.split("-")[0];
+
+const summary = `${title} is a ${pages}-pages long book, was writen by ${author}, and published on ${getYear(
+  publicationDate
+)}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 summary;
 
 // some times we not ues if-else, we can use ternary operator
@@ -224,3 +226,24 @@ const pagesSummary = pages > 1000 ? "over 1000" : "less than 1000";
 pagesSummary;
 
 console.log(`The book has ${pagesSummary} pages`);
+
+// Traditional function
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+// console.log(getYear(publicationDate));
+
+// Arrow function
+// const getYear = (str) => str.split("-")[0];
+// we can also pass multiple parameters
+// (str, a, b) => str.split("-")[0];
+// we dont need 'return' keyword
+// easy way to use in arrow method
+// const getYear = (str) => {
+//   // more function logic...
+//   // ...
+//   return str.split("-")[0];
+// };
+
+console.log(getYear(publicationDate));

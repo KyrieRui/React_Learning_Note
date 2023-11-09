@@ -250,3 +250,16 @@ console.log(getYear(publicationDate));
 
 console.log(false && "hello");
 console.log(true && "hello");
+
+console.log(hasMovieAdaptation && "This book has a movie adaptation");
+
+console.log("jonas" && "hello");
+console.log(0 && "hello");
+
+console.log(true || "hello");
+console.log(false || "hello");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "No translation";
+spanishTranslation;

@@ -247,3 +247,6 @@ console.log(`The book has ${pagesSummary} pages`);
 // };
 
 console.log(getYear(publicationDate));
+
+console.log(false && "hello");
+console.log(true && "hello");

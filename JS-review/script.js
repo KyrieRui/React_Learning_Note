@@ -148,7 +148,7 @@ function getBook(id) {
 // const books = getBooks();
 // books;
 
-const book = getBook(2);
+const book = getBook(1);
 // const title = book.title;
 // const author = book.author;
 
@@ -263,3 +263,12 @@ console.log(book.translations.spanish);
 
 const spanishTranslation = book.translations.spanish || "No translation";
 spanishTranslation;
+
+console.log(book.reviews.librarything.rating.reviewsCount);
+const librarythingReviewsCount =
+  book.reviews.librarything.rating.reviewsCount || "No data here";
+
+librarythingReviewsCount;
+
+const count = book.reviews.librarything.rating.reviewsCount ?? "No data here";
+count;

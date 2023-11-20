@@ -274,8 +274,8 @@ spanishTranslation;
 // count;
 
 function getTotalReview(book) {
-  const firstValue = book.reviews.goodreads.reviewsCount;
-  const secondValue = book.reviews.librarything?.reviewsCount ?? 0;
+  const firstValue = book.reviews?.goodreads?.reviewsCount ?? 0;
+  const secondValue = book.reviews?.librarything?.reviewsCount ?? 0;
   return firstValue + secondValue;
 }
 

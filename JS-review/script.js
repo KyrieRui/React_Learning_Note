@@ -148,7 +148,7 @@ function getBook(id) {
 // const books = getBooks();
 // books;
 
-const book = getBook(1);
+const book = getBook(3);
 // const title = book.title;
 // const author = book.author;
 
@@ -264,11 +264,19 @@ console.log(book.translations.spanish);
 const spanishTranslation = book.translations.spanish || "No translation";
 spanishTranslation;
 
-console.log(book.reviews.librarything.rating.reviewsCount);
-const librarythingReviewsCount =
-  book.reviews.librarything.rating.reviewsCount || "No data here";
+// console.log(book.reviews.librarything.rating.reviewsCount);
+// const librarythingReviewsCount =
+//   book.reviews.librarything.rating.reviewsCount || "No data here";
 
-librarythingReviewsCount;
+// librarythingReviewsCount;
 
-const count = book.reviews.librarything.rating.reviewsCount ?? "No data here";
-count;
+// const count = book.reviews.librarything.rating.reviewsCount ?? "No data here";
+// count;
+
+function getTotalReview(book) {
+  const firstValue = book.reviews.goodreads.reviewsCount;
+  const secondValue = book.reviews.librarything.reviewsCount;
+  return firstValue + secondValue;
+}
+
+console.log(getTotalReview(book));

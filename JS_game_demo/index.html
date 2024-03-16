@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maze Game</title>
+
+    <style>
+      #gameArea {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        position: relative;
+        background-image: url("map.png");
+        background-size: cover;
+      }
+      .star {
+        width: 20px;
+        height: 20px;
+        background-image: url("lubi.png"); /* 指定星星的贴图URL */
+        background-size: cover; /* 确保贴图充满整个元素 */
+        position: absolute;
+      }
+      .stump {
+        width: 20px;
+        height: 20px;
+        background-image: url("stump.webp"); /* 指定木桩的贴图URL */
+        background-size: cover; /* 确保贴图充满整个元素 */
+        position: absolute;
+      }
+      #player {
+        width: 30px;
+        height: 30px;
+        background-image: url("link.png"); /* 指定玩家的贴图URL */
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+      #controls {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gameArea"></div>
+    <div id="controls">
+      <button onclick="playBackgroundMusic()">Play Background Music</button>
+      <button onclick="movePlayer('up')">Up</button>
+      <button onclick="movePlayer('down')">Down</button>
+      <button onclick="movePlayer('left')">Left</button>
+      <button onclick="movePlayer('right')">Right</button>
+      <button onclick="movePlayer('reset')">Reset</button>
+      <br />
+      <input type="text" id="action1" placeholder="Action 1" />
+      <input type="text" id="action2" placeholder="Action 2" />
+      <input type="number" id="repeatCount" placeholder="Iterate number" />
+      <button onclick="movePlayerWithSequence()">For Loop</button>
+    </div>
+    <audio id="bgMusic" loop>
+      <source src="bgm.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <script src="game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+/* 星星样式 */
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: yellow;
+  border-radius: 50%; /* 让星星呈现圆形 */
+}
